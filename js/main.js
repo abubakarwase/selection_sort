@@ -1,9 +1,22 @@
 var arr = [38,23,27,19,2];
 
+selectionSort(arr);
+console.log(arr);
+
 function selectionSort(arr){
-    var min;
-    for(var i=0; i<arr.length-1; i++){
-        for()
+    
+    for(var i=0; i<arr.length; i++){
+        var lowest = i;
+            for(var j =i+1; j<arr.length; j++){
+                if(arr[j] < arr[lowest]){
+                    lowest = j;
+                }
+            }
+        if(i !== lowest ){    
+            var temp = arr[i];
+            arr[i] = arr[lowest];
+            arr[lowest] = temp;
+        }   
     }
     return arr;
 }
